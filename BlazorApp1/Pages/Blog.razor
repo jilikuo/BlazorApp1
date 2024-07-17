@@ -9,8 +9,8 @@
 <p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
 
 @code {
-
-    string Time;
+    string Time = DateTime.Now.ToString();
+    
     public void Dispose()
     {
         timer?.Dispose();
@@ -25,4 +25,11 @@
             await InvokeAsync(StateHasChanged);
         }, null, 0, 1000);
     }
+
+    private async Task<string> GetValue()
+    {
+        var result = DateTime.Now.ToString();
+        return result.Text;
+    }
+
 }
