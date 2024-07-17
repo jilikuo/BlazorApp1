@@ -1,17 +1,20 @@
 @page "/blog"
 
-<PageTitle>Blog</PageTitle>
+@section mainBlog {
 
-<h1>Blog</h1>
-
-<p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
-
-
-@section {
     @implements IDisposable
+
+    <PageTitle>Blog</PageTitle>
+
+    <h1>Blog</h1>
+
+    <p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
+
 }
 
 @code {
+
+    string Time;
     public void Dispose()
     {
         timer?.Dispose();
