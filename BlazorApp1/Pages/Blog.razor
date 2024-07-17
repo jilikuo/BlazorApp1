@@ -1,0 +1,29 @@
+@page "/blog"
+
+<PageTitle>Blog</PageTitle>
+
+<h1>Blog</h1>
+
+<p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
+
+
+@section {
+    @implements IDisposable
+}
+
+@code {
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+
+    Timer timer;
+    protected override void OnInitialized()
+    {
+        timer = new Timer(async _ => 
+        {
+            Time = await GetValue();        
+            await InvokeAsync(StateHasChanged);
+        }, null, 0, 1000);
+    }
+}
