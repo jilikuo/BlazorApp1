@@ -1,16 +1,12 @@
 @page "/blog"
 
-@section mainBlog {
+@implements IDisposable
 
-    @implements IDisposable
+<PageTitle>Blog</PageTitle>
 
-    <PageTitle>Blog</PageTitle>
+<h1>Blog</h1>
 
-    <h1>Blog</h1>
-
-    <p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
-
-}
+<p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @timer segundos</p>
 
 @code {
 
