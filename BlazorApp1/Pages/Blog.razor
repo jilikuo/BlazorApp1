@@ -29,7 +29,7 @@
 
     private async Task<string> CalculateTime()
     {
-        var result = (DateTime.Now - InitialTime).TotalSeconds;
+        var result = await Math.Truncate((DateTime.Now - InitialTime).TotalSeconds);
         return result.ToString();
     }
 }
