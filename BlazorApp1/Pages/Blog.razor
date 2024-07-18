@@ -30,7 +30,7 @@
     private async Task<string> CalculateTime()
     {
         double seconds = Math.Truncate((DateTime.Now - InitialTime).TotalSeconds);
-        string result = await seconds.ToString()
+        var result = await seconds.ToString();
         return result;
     }
 }
