@@ -27,9 +27,10 @@
         }, null, 0, 1000);
     }
 
-    private Task<string> CalculateTime()
+    private async Task<string> CalculateTime()
     {
-        var result = Math.Truncate((DateTime.Now - InitialTime).TotalSeconds);
-        return result.ToString();
+        double seconds = Math.Truncate((DateTime.Now - InitialTime).TotalSeconds);
+        string result = await seconds.ToString()
+        return result;
     }
 }
