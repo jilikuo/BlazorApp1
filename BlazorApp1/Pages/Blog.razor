@@ -27,7 +27,7 @@
         }, null, 0, 1000);
     }
 
-    private void Task<string> CalculateTime()
+    private Task<string> CalculateTime()
     {
         var result = Math.Truncate((DateTime.Now - InitialTime).TotalSeconds);
         return result.ToString();
