@@ -9,7 +9,8 @@
 <p role="status">Bem-Vindo(a) ao meu blog! Você está aqui há @Time segundos</p>
 
 @code {
-    string Time = DateTime.Now.ToString();
+    var InitialTime = DateTime.Now;
+    string Time;
     
     public void Dispose()
     {
@@ -28,8 +29,8 @@
 
     private async Task<string> GetValue()
     {
-        var result = DateTime.Now.ToString();
+        var result = (DateTime.Now - InitialTime).TotalSeconds 
+        result = result.ToString();
         return result;
     }
-
 }
